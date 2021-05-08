@@ -18,10 +18,6 @@ import matplotlib
 from matplotlib import pyplot as plt
 import tqdm
 
-import matplotlib.pyplot as plt
-from PIL import Image
-from numpy import moveaxis
-
 dtype = th.float32
 
 """ load all data in tiny imagenet in a tensor """
@@ -325,7 +321,7 @@ def check_validation_accuracy(loader, model):
 
 """ Train model using dataloader """
 """ https://github.com/tjmoon0104/pytorch-tiny-imagenet """
-def train_model_(output_path, model, dataloaders, dataset_sizes, criterion, optimizer, num_epochs=5, scheduler=None):
+def train_model_tj(output_path, model, dataloaders, dataset_sizes, criterion, optimizer, num_epochs=5, scheduler=None):
     if not os.path.exists('models/'+str(output_path)):
         os.makedirs('models/'+str(output_path))
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
