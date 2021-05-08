@@ -14,6 +14,14 @@ import torchvision.transforms as transforms
 import torch.utils.data as data
 import torchvision.datasets as datasets
 
+import matplotlib
+from matplotlib import pyplot as plt
+import tqdm
+
+import matplotlib.pyplot as plt
+from PIL import Image
+from numpy import moveaxis
+
 dtype = th.float32
 
 """ load all data in tiny imagenet in a tensor """
