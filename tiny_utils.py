@@ -247,7 +247,7 @@ def train_model(model, X_train, y_train, optimizer, epochs=1):
     return train_accs, val_accs, train_loss, val_loss
 
 """ Train model using dataloader """
-def train_model(model, optimizer, epochs=1):
+def train_model_dataloader(model, optimizer, epochs=1):
     model = model.to(device=device)
     train_accs = []
     val_accs = []
@@ -324,6 +324,7 @@ def check_validation_accuracy(loader, model):
     return acc, np.mean(loss_epoch)
 
 """ Train model using dataloader """
+""" https://github.com/tjmoon0104/pytorch-tiny-imagenet """
 def train_model_(output_path, model, dataloaders, dataset_sizes, criterion, optimizer, num_epochs=5, scheduler=None):
     if not os.path.exists('models/'+str(output_path)):
         os.makedirs('models/'+str(output_path))
